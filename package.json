@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha",
+    "coverage": "nyc npm test && nyc report --reporter=text-lcov | coveralls && rm -rf .nyc_output",
     "start": "tsc-watch --onSuccess \"node dist/index.js\"",
     "doc": "typedoc"
   },
@@ -23,8 +24,10 @@
     "@types/chai": "^4.2.16",
     "@types/mocha": "^8.2.2",
     "chai": "^4.3.4",
+    "coveralls": "^3.1.0",
     "mocha": "^8.3.2",
     "node": "^15.14.0",
+    "nyc": "^15.1.0",
     "ts": "^0.0.0",
     "ts-node": "^9.1.1",
     "tsc-watch": "^4.2.9",
